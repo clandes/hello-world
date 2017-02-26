@@ -81,24 +81,27 @@ function getVeggie(runningTotal,text1) {
 	getCheese(runningTotal,text1);
 };
 
-//Create new array for calculating cheese price
-var cheese_prices = new Array();
-cheese_prices["Regular cheese"]=0;
-cheese_prices["Extra cheese"]=3;
-cheese_prices["No cheese"]=0;
-
-//Calculate selected cheese price into runningTotal
-function getCheesePrice(runningTotal,text1) {
-	var cheeseTotal=0;
+function getCheese(runningTotal,text1) {
+	var cheeseTotal = 0;
 	var cheeseArray = document.getElementsByClassName("cheese");
-		for(var i = 0; i < selectedCheese.length; i++) {
-			if(selectedCheese[i].checked) {
-				cheeseTotal = cheese_prices[selectedcheese[i].value];
-			break;
+	for (var i = 0; i < cheeseArray.length; i++) {
+		if (cheeseArray[i].checked) {
+			var selectedCheese = cheeseArray[i].value;
+			console.log("selected cheese item: ("+cheeseArray[i].value+")");
+			text1 = text1+selectedCheese+"<br>";
 		}
 	}
-	return cheesePrice;
+	if (selectedCheese === "Regular cheese") {
+		cheeseTotal = 0;
+	} else if (selectedCheese === "Extra cheese") {
+		cheeseTotal = 3;
+	} else if (selectedCheese === "No cheese") {
+		cheeseTotal = 0;
 	}
+	runningTotal = (runningTotal + cheeseTotal);
+	console.log(selectedCheese+" = $"+cheeseTotal+".00");
+	console.log("cheese text1: "+text1);
+	console.log("subtotal: $"+runningTotal+".00");
 	getSauce(runningTotal,text1);
 };
 
