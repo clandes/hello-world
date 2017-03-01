@@ -59,18 +59,17 @@
 					<input class="veggies" type="checkbox" name="Veggie" value="Spinach"> Spinach<br>
 					<input class="veggies" type="checkbox" name="Veggie" value="Tomatoes"> Tomatoes<br>
 				</div>
-				<br>
-				<div class="menu center">
-					<input id="btnOrder" type="button" onclick="getReceipt()" 
-					value="Place Order">
+				</form><br>
+				<div class="controls">
+					<input class="btnOrder" type="button" onclick="getReceipt()" value="Place Order">
+					<input class="clear" type="button" onclick="clearAll()" value="Cancel">
 				</div>
 				<br>
-				<div id="cart">
+				<form id="cart">
 					<div id="showText"></div>
-					<div id="showText"></div>
-					<div id="totalPrice"></div>
+					<div id="totalPrice"></div>		
 				</div>
-			</form>
+				</form>
 		</div>
 		<script src="./js/calculations.js"></script>
 	</body>

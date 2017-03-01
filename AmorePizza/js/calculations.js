@@ -99,9 +99,9 @@ function getCheese(runningTotal,text1) {
 		cheeseTotal = 0;
 	}
 	runningTotal = (runningTotal + cheeseTotal);
-	console.log(selectedCheese+" = $"+cheeseTotal+".00");
-	console.log("cheese text1: "+text1);
-	console.log("subtotal: $"+runningTotal+".00");
+	console.log("Purchase Total: "+"$"+runningTotal+".00");
+	document.getElementById("showText").innerHTML=text1;
+	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 	getSauce(runningTotal,text1);
 };
 
@@ -114,7 +114,9 @@ function getSauce(runningTotal,text1) {
 			text1 = text1 + selectedSauce +"<br>";
 		}
 	}
-	text2 = text2 + 0 + "<br>";
+	console.log("Purchase Total: "+"$"+runningTotal+".00");
+	document.getElementById("showText").innerHTML=text1;
+	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 	getCrust(runningTotal,text1)
 };
 
@@ -132,11 +134,9 @@ function getCrust(runningTotal,text1) {
 		}
 	}
 	runningTotal = (runningTotal + crustTotal);
-	text2 = text2 + crustTotal + "<br>";
-	document.getElementById("cart").style.opacity=1;
-	document.getElementById("showText1").innerHTML=text1;
-	document.getElementById("showText2").innerHTML=text2;
-	document.getElementById("totalPrice2").innerHTML = "</h3>$"+runningTotal+".00"+"</h3>";
+	console.log("Purchase Total: "+"$"+runningTotal+".00");
+	document.getElementById("showText").innerHTML=text1;
+	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 };
 
 // This code clears the form selections to their defaults and then sets the 
